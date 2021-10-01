@@ -67,3 +67,42 @@ ggplot(cycle_hire) +
   get_stamenmap()
 ```
 
+
+
+```{r}
+
+tmap_mode("plot")
+
+tm_shape(land) +    
+  tm_raster("elevation", palette = terrain.colors()) +
+tm_shape(World) +
+    tm_borders("white", lwd = .5) +
+tm_shape(urban_agglomerations) +
+  tm_dots("population_millions")
+  
+```
+
+
+```{r}
+
+tmap_mode("plot")
+
+tm_shape(world) +
+  tm_polygons() +
+  tm_shape(urban_agglomerations) +
+  tm_dots("population_millions")
+
+```
+
+```{r}
+
+tmap_mode("plot")
+
+london <- leaflet() %>% setView(lng = 0.1275, lat = 51.5074, zoom = 10)
+
+london %>% 
+  addProviderTiles(providers$CartoDB.Positron) + 
+  tm_shape(cycle_hire_osm) +
+  tm_dots("capacity")
+```
+
