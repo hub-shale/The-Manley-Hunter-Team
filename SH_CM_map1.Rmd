@@ -96,7 +96,7 @@ tm_shape(world) +
 
 ```{r}
 
-tmap_mode("plot")
+tmap_mode("view")
 
 london <- leaflet() %>% setView(lng = 0.1275, lat = 51.5074, zoom = 10)
 
