@@ -25,6 +25,8 @@ library(ggplot2)
 library(GGally)
 library(basemaps)
 library(ggmap)
+library(usethis)
+library(gitcreds)
 ```
 
 ## Loading data
